@@ -6,3 +6,5 @@ A simple Android Studio project to demonstrate how to convert the motion sensors
 Feel free to suggest edits or a better approach.
 
 You can read the full explanation from the [Medium article](https://medium.com)
+
+<table><tr><td><img src="https://raw.githubusercontent.com/Matt2397/EarthCoordinates/master/screenshots/screen1.png" width="200"></td><td><img src="https://raw.githubusercontent.com/Matt2397/EarthCoordinates/master/screenshots/screen2.png" width="200"></td></tr></table>
