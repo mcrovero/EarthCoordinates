@@ -30,19 +30,27 @@ class CanvasView(internal var context: Context, attrs: AttributeSet) : View(cont
     }
 
     private val paintLine = Paint().apply {
-        color = Color.parseColor("#0000FF")
+        color = Color.parseColor("#ffffff")
         strokeWidth = 10f
     }
 
     private val paintLine2 = Paint().apply {
-        color = Color.parseColor("#00FF00")
+        color = Color.parseColor("#ff0072")
         strokeWidth = 10f
     }
+
+    var centerX = 0f
+    var centerY = 0f
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        canvas.translate(500f,600f)
-        canvas.drawLine(0f,0f,direction.x*200,direction.y*200,paintLine)
-        canvas.drawLine(0f,0f,directionZero.x*200,directionZero.y*200,paintLine2)
+        centerX = width/2f
+        centerY = height/2f
+
+        // zero direction line
+        canvas.drawLine(centerX,centerY,centerX+directionZero.x*400,centerY+directionZero.y*400,paintLine2)
+
+        // acceleration line
+        canvas.drawLine(centerX,centerY,centerX+direction.x*60,centerY+direction.y*60,paintLine)
 
     }
 

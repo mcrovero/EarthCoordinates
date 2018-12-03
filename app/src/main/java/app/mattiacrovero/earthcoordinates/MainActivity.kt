@@ -8,14 +8,18 @@ import android.hardware.SensorManager
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), SensorEventListener {
 
     companion object {
         // change this constants to change performance
-        const val UPDATE_FREQUENCY = SensorManager.SENSOR_DELAY_UI
-        const val MAX_UPDATE_FREQUENCY = SensorManager.SENSOR_DELAY_FASTEST
+        const val ROTATION_UPDATE_FREQUENCY = SensorManager.SENSOR_DELAY_NORMAL
+        const val ROTATION_MAX_UPDATE_FREQUENCY = SensorManager.SENSOR_DELAY_NORMAL
+
+        const val ACCELEROMETER_UPDATE_FREQUENCY = SensorManager.SENSOR_DELAY_UI
+        const val ACCELEROMETER_MAX_UPDATE_FREQUENCY = SensorManager.SENSOR_DELAY_UI
     }
 
     private lateinit var sensorManager: SensorManager
@@ -42,8 +46,12 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     private fun updateUI() {
         if(earthMode){
             btn_mode.text = "Change to device relative coordinates"
+            img_device.visibility = View.GONE
+            img_earth.visibility = View.VISIBLE
         } else {
             btn_mode.text = "Change to earth coordinates"
+            img_device.visibility = View.VISIBLE
+            img_earth.visibility = View.GONE
         }
     }
 
@@ -53,16 +61,16 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
             sensorManager.registerListener(
                 this,
                 accelerometer,
-                UPDATE_FREQUENCY,
-                MAX_UPDATE_FREQUENCY
+                ACCELEROMETER_UPDATE_FREQUENCY,
+                ACCELEROMETER_MAX_UPDATE_FREQUENCY
             )
         }
         sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)?.also { gyroscope ->
             sensorManager.registerListener(
                 this,
                 gyroscope,
-                UPDATE_FREQUENCY,
-                MAX_UPDATE_FREQUENCY
+                ROTATION_UPDATE_FREQUENCY,
+                ROTATION_MAX_UPDATE_FREQUENCY
             )
         }
     }

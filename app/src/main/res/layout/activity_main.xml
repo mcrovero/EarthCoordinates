@@ -2,7 +2,19 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#000000">
+    <ImageView android:id="@+id/img_device"
+               android:src="@drawable/bg_device"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_above="@+id/btn_mode"/>
+    <ImageView android:id="@+id/img_earth"
+               android:src="@drawable/bg_earth"
+               android:visibility="gone"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_above="@+id/btn_mode"/>
     <app.mattiacrovero.earthcoordinates.CanvasView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
