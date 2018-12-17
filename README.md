@@ -7,4 +7,4 @@ Feel free to suggest edits or a better approach.
 
 You can read the full explanation from the [Medium article](https://medium.com/@mattia_crovero/earth-coordinate-system-b9d309bda35e)
 
-<table><tr><td><img src="https://raw.githubusercontent.com/Matt2397/EarthCoordinates/master/screenshots/screen1.png" width="200"></td><td><img src="https://raw.githubusercontent.com/Matt2397/EarthCoordinates/master/screenshots/screen2.png" width="200"></td></tr></table>
+<table><tr><td><img src="https://raw.githubusercontent.com/mcrovero/EarthCoordinates/master/screenshots/screen1.png" width="200"></td><td><img src="https://raw.githubusercontent.com/mcrovero/EarthCoordinates/master/screenshots/screen2.png" width="200"></td></tr></table>
